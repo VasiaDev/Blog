@@ -42,7 +42,7 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../dist/css/adminlte.css" />
+    <link rel="stylesheet" href="{{ asset('../dist/css/adminlte.css') }}" />
     <!--end::Required Plugin(AdminLTE)-->
     <!-- apexcharts -->
     <link
@@ -81,14 +81,7 @@
     </nav>
     <!--end::Header-->
     <!--begin::Sidebar-->
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-
-        <!--begin::Sidebar Wrapper-->
-        <div class="sidebar-wrapper">
-
-        </div>
-        <!--end::Sidebar Wrapper-->
-    </aside>
+    @include('admin.includes.sidebar')
     <!--end::Sidebar-->
     <!--begin::App Main-->
     @yield('content')
@@ -124,7 +117,7 @@
     crossorigin="anonymous"
 ></script>
 <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-<script src="../../dist/js/adminlte.js"></script>
+<script src="{{ asset('../../dist/js/adminlte.js') }}"></script>
 <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';

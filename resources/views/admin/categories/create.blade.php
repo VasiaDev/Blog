@@ -27,10 +27,14 @@
                 <!--begin::Row-->
                 <div class="row">
                     <div class="col-12">
-                        <form action="#" class="w-25">
+                        <form action="{{ route('admin.category.store') }}" method="POST" class="w-25">
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label">Title</label>
-                                <input type="text" class="form-control" placeholder="Category title">
+                                <input type="text" class="form-control" name="title" placeholder="Category title">
+                                @error('title')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <input type="submit" class="btn btn-secondary mb-2" value="Add">
                         </form>

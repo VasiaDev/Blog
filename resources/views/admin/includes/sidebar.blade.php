@@ -16,6 +16,12 @@
                         <p>Categories</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.tag.index') }}" class="nav-link">
+                        <i class="bi bi-tags-fill"></i>
+                        <p>Tags</p>
+                    </a>
+                </li>
 
             </ul>
             <!--end::Sidebar Menu-->

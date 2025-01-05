@@ -48,7 +48,7 @@
                                             <td>{{ $category->title }}</td>
                                             <td style="text-align: center">
                                                 <a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-eye m-2"></i></a>
-                                                <a href="{{ route('admin.category.edit', $category->id) }}"><i class="fa-solid fa-pen-to-square m-2"></i></a>
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="text-success"><i class="fa-solid fa-pen-to-square m-2"></i></a>
                                                 <a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-trash-can m-2"></i></a>
                                             </td>
                                         </tr>

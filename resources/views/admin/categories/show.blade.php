@@ -7,7 +7,10 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">{{ $category->title }}</h3></div>
+                    <div class="d-flex col-sm-6 align-items-center">
+                        <h3 class="mb-0">{{ $category->title }}</h3>
+                        <a href="{{ route('admin.category.edit', $category->id) }}" class="text-success"><i class="fa-solid fa-pen-to-square m-2"></i></a>
+                    </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>

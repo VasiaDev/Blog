@@ -38,7 +38,7 @@
                                     <tr>
                                         <th style="width: 10px">ID</th>
                                         <th>Title</th>
-                                        <th style="width: 60px">Action</th>
+                                        <th style="width: 90px">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -46,7 +46,11 @@
                                         <tr class="align-middle">
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td style="text-align: center"><a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-eye"></i></a></td>
+                                            <td style="text-align: center">
+                                                <a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-eye m-2"></i></a>
+                                                <a href="{{ route('admin.category.edit', $category->id) }}"><i class="fa-solid fa-pen-to-square m-2"></i></a>
+                                                <a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-trash-can m-2"></i></a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

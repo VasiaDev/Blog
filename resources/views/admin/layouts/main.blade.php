@@ -24,6 +24,7 @@
         integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
         crossorigin="anonymous"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <!--end::Fonts-->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <link
@@ -87,7 +88,7 @@
     @yield('content')
     <!--end::App Main-->
     <!--begin::Footer-->
-    <footer class="app-footer">
+    <footer class="app-footer" style="text-align: center">
         <!--begin::Copyright-->
         <strong>
             Blog

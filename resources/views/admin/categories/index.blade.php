@@ -38,7 +38,7 @@
                                     <tr>
                                         <th style="width: 10px">ID</th>
                                         <th>Title</th>
-                                        <th style="width: 115px">Count of posts</th>
+                                        <th style="width: 60px">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -46,7 +46,7 @@
                                         <tr class="align-middle">
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td>25</td>
+                                            <td style="text-align: center"><a href="{{ route('admin.category.show', $category->id) }}"><i class="fa-solid fa-eye"></i></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>

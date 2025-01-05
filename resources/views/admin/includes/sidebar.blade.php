@@ -11,7 +11,7 @@
                 data-accordion="false"
             >
                 <li class="nav-item">
-                    <a href="{{ route('categories') }}" class="nav-link">
+                    <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="bi bi-grid-fill"></i>
                         <p>Categories</p>
                     </a>

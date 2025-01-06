@@ -30,6 +30,8 @@
     />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <!--end::Fonts-->
+    <link href="{{ asset('/multiple_select/css/mobiscroll.javascript.min.css') }}" rel="stylesheet" />
+    <script src="{{ asset('/multiple_select/js/mobiscroll.javascript.min.js') }}"></script>
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <link
         rel="stylesheet"
@@ -140,8 +142,40 @@
             ]
         });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const handleTrialText = () => {
+            const divs = document.querySelectorAll("div");
+            divs.forEach(div => {
+                if (div.childNodes.length === 1 && div.textContent.trim() === "TRIAL") {
+                    div.style.color = "transparent";
+                }
+            });
+        };
+
+        handleTrialText();
+
+        const observer = new MutationObserver(() => {
+            handleTrialText();
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    });
 </script>
 <script src="{{ asset('../../dist/js/adminlte.js') }}"></script>
+<script>
+
+    mobiscroll.setOptions({
+        locale: mobiscroll.localeEn,
+        theme: 'ios',
+        themeVariant: 'light'
+    });
+
+    mobiscroll.select('#demo-multiple-select', {
+        inputElement: document.getElementById('demo-multiple-select-input'),
+    });
+
+</script>
 <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';

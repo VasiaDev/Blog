@@ -77,6 +77,23 @@
                                 <div class="text-danger">{{ 'The selected category is invalid.' }}</div>
                                 @enderror
                             </div>
+                            <div class="form-group mt-3">
+                                <label class="form-label">Select tags</label>
+                            <div mbsc-page class="demo-multiple-select">
+                                <div style="height:100%; width: 50%">
+                                    <label>
+                                        <input mbsc-input id="demo-multiple-select-input" placeholder="Please select..." data-dropdown="true" data-input-style="outline" data-label-style="stacked" data-tags="true" />
+                                    </label>
+                                    <select id="demo-multiple-select" name="tag_ids[]" multiple>
+                                        @foreach($tags as $tag)
+                                            <option value="{{ $tag->id }}" {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? ' selected' : '' }}>
+                                                {{ $tag->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary mb-2 mt-3" value="Add">
                             </div>

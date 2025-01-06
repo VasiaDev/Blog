@@ -63,6 +63,20 @@
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+                            <div class="form-group mt-3 w-50">
+                                <label class="form-label">Select category</label>
+                                <select name="category_id" class="form-select">
+                                    <option>Choose...</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? ' selected' : '' }}>
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('category_id')
+                                <div class="text-danger">{{ 'The selected category is invalid.' }}</div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-secondary mb-2 mt-3" value="Add">
                             </div>

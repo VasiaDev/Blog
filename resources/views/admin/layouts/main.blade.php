@@ -141,7 +141,6 @@
         });
     });
 </script>
-
 <script src="{{ asset('../../dist/js/adminlte.js') }}"></script>
 <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 <script>

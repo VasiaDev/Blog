@@ -28,7 +28,7 @@
                 <!--begin::Row-->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.post.store') }}" method="POST">
+                        <form action="{{ route('admin.post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3 w-25">
                                 <label class="form-label">Title</label>
@@ -40,6 +40,26 @@
                             <div class="form-group">
                                 <textarea id="summernote" name="content">{{ old('content') }}</textarea>
                                 @error('content')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-group mt-3 w-50">
+                                <label class="form-label">Add preview</label>
+                                <div class="input-group">
+                                <input type="file" class="form-control" id="inputGroupFile02" name="preview_image">
+                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                </div>
+                                @error('preview_image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-group mt-3 w-50">
+                                <label class="form-label">Add main preview</label>
+                                <div class="input-group">
+                                    <input type="file" class="form-control" id="inputGroupFile02" name="main_image">
+                                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                </div>
+                                @error('main_image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

@@ -31,4 +31,23 @@ class StoreRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id'
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'title.required' => 'The title field is required',
+            'title.string' => 'The title must be a string',
+            'content.required' => 'The content field is required',
+            'content.string' => 'The content must be a string',
+            'preview_image.required' => 'The preview image field is required',
+            'preview_image.file' => 'The preview image must be a file',
+            'main_image.required' => 'The main image field is required',
+            'main_image.file' => 'The main image must be a file',
+            'category_id.required' => 'The category field is required',
+            'category_id.integer' => 'The category must be an integer',
+            'category_id.exists' => 'The category must be an exists',
+            'tag_ids.integer' => 'The tags must be an integer',
+            'tag_ids.exists' => 'The tags must be an exists'
+        ];
+    }
 }

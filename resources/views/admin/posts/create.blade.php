@@ -74,7 +74,7 @@
                                     @endforeach
                                 </select>
                                 @error('category_id')
-                                <div class="text-danger">{{ 'The selected category is invalid.' }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group mt-3">

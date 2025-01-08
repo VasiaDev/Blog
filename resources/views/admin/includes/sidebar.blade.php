@@ -11,6 +11,12 @@
                 data-accordion="false"
             >
                 <li class="nav-item">
+                    <a href="{{ route('admin.user.index') }}" class="nav-link">
+                        <i class="bi bi-people-fill"></i>
+                        <p>Users</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.post.index') }}" class="nav-link">
                         <i class="bi bi-stickies-fill"></i>
                         <p>Posts</p>

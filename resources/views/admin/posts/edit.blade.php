@@ -78,7 +78,6 @@
                             <div class="form-group mt-3 w-50">
                                 <label class="form-label">Select category</label>
                                 <select name="category_id" class="form-select">
-                                    <option>Choose...</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? ' selected' : '' }}>
                                             {{ $category->title }}

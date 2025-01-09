@@ -66,7 +66,7 @@
                             <div class="form-group mt-3 w-50">
                                 <label class="form-label">Select category</label>
                                 <select name="category_id" class="form-select">
-                                    <option>Choose...</option>
+                                    <option disabled selected>Choose...</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? ' selected' : '' }}>
                                             {{ $category->title }}

@@ -30,22 +30,22 @@
                         <!--begin::Small Box Widget 1-->
                         <div class="small-box text-bg-primary">
                             <div class="inner">
-                                <h3>150</h3>
-                                <p>New Orders</p>
+                                <h3>{{ $data['usersCount'] }}</h3>
+                                <p>Users</p>
                             </div>
                             <svg
                                 class="small-box-icon"
                                 fill="currentColor"
-                                viewBox="0 0 24 24"
+                                viewBox="0 0 640 512"
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
                             >
                                 <path
-                                    d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.96-7.228.75.75 0 00-.525-.965A60.864 60.864 0 005.68 4.509l-.232-.867A1.875 1.875 0 003.636 2.25H2.25zM3.75 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zM16.5 20.25a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z"
-                                ></path>
+                                    d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192l42.7 0c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0L21.3 320C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7l42.7 0C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3l-213.3 0zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352l117.3 0C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7l-330.7 0c-14.7 0-26.7-11.9-26.7-26.7z"
+                                />
                             </svg>
                             <a
-                                href="#"
+                                href="{{ route('admin.user.index') }}"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
                             >
                                 More info <i class="bi bi-link-45deg"></i>
@@ -58,22 +58,22 @@
                         <!--begin::Small Box Widget 2-->
                         <div class="small-box text-bg-success">
                             <div class="inner">
-                                <h3>53<sup class="fs-5">%</sup></h3>
-                                <p>Bounce Rate</p>
+                                <h3>{{ $data['postsCount'] }}</h3>
+                                <p>Posts</p>
                             </div>
                             <svg
                                 class="small-box-icon"
                                 fill="currentColor"
-                                viewBox="0 0 24 24"
+                                viewBox="0 0 448 512"
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
                             >
                                 <path
-                                    d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"
+                                    d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"
                                 ></path>
                             </svg>
                             <a
-                                href="#"
+                                href="{{ route('admin.post.index') }}"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
                             >
                                 More info <i class="bi bi-link-45deg"></i>
@@ -86,22 +86,21 @@
                         <!--begin::Small Box Widget 3-->
                         <div class="small-box text-bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
-                                <p>User Registrations</p>
+                                <h3>{{ $data['categoriesCount'] }}</h3>
+                                <p>Categories</p>
                             </div>
                             <svg
                                 class="small-box-icon"
                                 fill="currentColor"
-                                viewBox="0 0 24 24"
+                                viewBox="0 0 512 512"
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
                             >
                                 <path
-                                    d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"
-                                ></path>
+                                    d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zm64 0l0 64 64 0 0-64L64 96zm384 0L192 96l0 64 256 0 0-64zM64 224l0 64 64 0 0-64-64 0zm384 0l-256 0 0 64 256 0 0-64zM64 352l0 64 64 0 0-64-64 0zm384 0l-256 0 0 64 256 0 0-64z"                                ></path>
                             </svg>
                             <a
-                                href="#"
+                                href="{{ route('admin.category.index') }}"
                                 class="small-box-footer link-dark link-underline-opacity-0 link-underline-opacity-50-hover"
                             >
                                 More info <i class="bi bi-link-45deg"></i>
@@ -114,29 +113,22 @@
                         <!--begin::Small Box Widget 4-->
                         <div class="small-box text-bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
-                                <p>Unique Visitors</p>
+                                <h3>{{ $data['tagsCount'] }}</h3>
+                                <p>Tags</p>
                             </div>
                             <svg
                                 class="small-box-icon"
                                 fill="currentColor"
-                                viewBox="0 0 24 24"
+                                viewBox="0 0 448 512"
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
                             >
                                 <path
-                                    clip-rule="evenodd"
-                                    fill-rule="evenodd"
-                                    d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z"
-                                ></path>
-                                <path
-                                    clip-rule="evenodd"
-                                    fill-rule="evenodd"
-                                    d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"
+                                    d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128l95.1 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0L325.8 320l58.2 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-68.9 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7-95.1 0-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384 32 384c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 21.3-128L64 192c-17.7 0-32-14.3-32-32s14.3-32 32-32l68.9 0 11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320l95.1 0 21.3-128-95.1 0z"
                                 ></path>
                             </svg>
                             <a
-                                href="#"
+                                href="{{ route('admin.tag.index') }}"
                                 class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover"
                             >
                                 More info <i class="bi bi-link-45deg"></i>

@@ -33,8 +33,15 @@
                             @method('PATCH')
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Username" value="{{ $user->name }}">
+                                <input type="text" class="form-control" name="name" placeholder="Enter Username" value="{{ $user->name }}">
                                 @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Enter email" value="{{ $user->email }}">
+                                @error('email')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

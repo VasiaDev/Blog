@@ -22,7 +22,20 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string'
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Name is required',
+            'name.string' => 'Name must be string',
+            'email.required' => 'Email is required',
+            'email.string' => 'Email must be string',
+            'email.email' => 'Email must be a valid email',
+            'email.unique' => 'The email has already been taken',
         ];
     }
 }

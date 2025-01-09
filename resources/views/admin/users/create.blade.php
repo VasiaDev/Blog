@@ -32,8 +32,22 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Username">
+                                <input type="text" class="form-control" name="name" placeholder="Enter Username">
                                 @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Enter email">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password</label>
+                                <input type="text" class="form-control" name="password" placeholder="Enter password">
+                                @error('password')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

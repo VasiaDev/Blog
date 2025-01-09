@@ -22,7 +22,23 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string'
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Name is required',
+            'name.string' => 'Name must be string',
+            'email.required' => 'Email is required',
+            'email.string' => 'Email must be string',
+            'email.email' => 'Email must be a valid email',
+            'email.unique' => 'Email must be unique',
+            'password.required' => 'Password is required',
+            'password.string' => 'Password must be string',
         ];
     }
 }

@@ -18,6 +18,32 @@
             </section>
             <div class="row">
                 <div class="col-lg-9 mx-auto">
+                    <section class="py-3">
+                        @auth()
+                        <form action="{{ route('post.like.store', $post->id) }}" method="POST">
+                            @csrf
+                            <span>{{ $post->liked_users_count }}</span>
+                            <button type="submit" class="border-0 bg-transparent">
+                                    @if(auth()->user()->likedPosts->contains($post->id))
+                                        <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
+                                    @else
+                                        <i class="fa-regular fa-heart"></i>
+                                    @endif
+                            </button>
+                        </form>
+                        @endauth
+                        @guest()
+                            <div>
+                                <span>{{ $post->liked_users_count }}</span>
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        @endguest
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 mx-auto">
+                    @if($relatedPosts->count() > 0)
                     <section class="related-posts">
                         <h2 class="section-title mb-4" data-aos="fade-up">Related Posts</h2>
                         <div class="row">
@@ -32,6 +58,7 @@
                             @endforeach
                         </div>
                     </section>
+                    @endif
                     <section class="comment-list mb-5">
                         <h2 class="section-title mb-5" data-aos="fade-up">Comments ({{ $post->comments->count() }})</h2>
                     @foreach($post->comments as $comment)

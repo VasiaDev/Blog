@@ -26,6 +26,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('main.index') }}">Blog</a>
                     </li>
+                    <li class="nav-item">
+                        @auth()
+                        <a class="nav-link" href="{{ route('personal') }}">Account</a>
+                        @endauth
+                        @guest()
+                        <a class="nav-link" href="{{ route('personal') }}">Login</a>
+                        @endguest
+                    </li>
                 </ul>
             </div>
         </nav>

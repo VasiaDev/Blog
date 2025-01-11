@@ -44,7 +44,7 @@
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
                                             <td style="text-align: center" class="d-flex">
-                                                <a href="{{ route('admin.post.show', $post->id) }}"><i
+                                                <a href="{{ route('post.show', $post->id) }}"><i
                                                         class="fa-solid fa-eye m-2"></i></a>
                                                 <form action="{{ route('personal.liked.delete', $post->id) }}"
                                                       method="POST">

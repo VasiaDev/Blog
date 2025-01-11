@@ -32,7 +32,21 @@
                     </li>
                     <li class="nav-item">
                         @auth()
-                        <a class="nav-link" href="{{ route('personal') }}">Account</a>
+                        <li class="nav-item dropdown show">
+                            <div class="d-flex align-items-center">
+                            <a class="nav-link dropdown-toggle pr-2" href="#" id="blogDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{ auth()->user()->name }}</a>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-menu show" aria-labelledby="blogDropdown" style="display: none;">
+                                <a class="dropdown-item" href="{{ route('personal') }}">Account</a>
+                                <a class="dropdown-item" href="blog-single.html">
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <input class="btn pl-0" type="submit" value="Logout">
+                                        </form>
+                                </a>
+                            </div>
+                        </li>
                         @endauth
                         @guest()
                                 <div class="d-flex">

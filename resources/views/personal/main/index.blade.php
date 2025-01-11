@@ -30,7 +30,7 @@
                         <!--begin::Small Box Widget 1-->
                         <div class="small-box text-bg-primary">
                             <div class="inner">
-                                <h3>10</h3>
+                                <h3>{{ $countLikes }}</h3>
                                 <p>Liked posts</p>
                             </div>
                             <svg
@@ -58,7 +58,7 @@
                         <!--begin::Small Box Widget 2-->
                         <div class="small-box text-bg-success">
                             <div class="inner">
-                                <h3>10</h3>
+                                <h3>{{ $countComments }}</h3>
                                 <p>Comments</p>
                             </div>
                             <svg

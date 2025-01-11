@@ -85,6 +85,14 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('main.index') }}">
+                        <i class="fa-solid fa-icons"></i>
+                        Blogs
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <input class="btn btn-outline-secondary" type="submit" value="Exit">

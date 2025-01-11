@@ -22,8 +22,8 @@ return new class extends Migration
             $table->index('tag_id', 'post_tag_tag_idx');
 
             // FK
-            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->references('id');
-            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id');
+            $table->foreign('post_id', 'post_tag_post_fk')->on('posts')->references('id')->onDelete('restrict');
+            $table->foreign('tag_id', 'post_tag_tag_fk')->on('tags')->references('id')->onDelete('restrict');
 
             $table->timestamps();
         });

@@ -15,6 +15,7 @@ class ShowController extends Controller
             ->where('id', '!=', $post->id)
             ->get()
             ->take(3);
+
         return view('posts.show', compact('post', 'date', 'relatedPosts'));
     }
 }

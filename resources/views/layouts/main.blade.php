@@ -35,7 +35,10 @@
                         <a class="nav-link" href="{{ route('personal') }}">Account</a>
                         @endauth
                         @guest()
-                        <a class="nav-link" href="{{ route('personal') }}">Login</a>
+                                <div class="d-flex">
+                                   <a class="nav-link" href="{{ route('personal') }}">Login</a>
+                                   <a class="nav-link" href="{{ route('register') }}">Register</a>
+                               </div>
                         @endguest
                     </li>
                 </ul>

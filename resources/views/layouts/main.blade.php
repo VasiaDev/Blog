@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edica :: Home</title>
+    <title>SPHERE</title>
     <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css') }}">
@@ -12,13 +12,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/loader.js') }}"></script>
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <div class="edica-loader"></div>
 <header class="edica-header">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><img src="{{asset('assets/images/logo.svg')}}" alt="Edica"></a>
+            <a class="navbar-brand" href="#">SPHERE</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,14 +68,14 @@
 
 @yield('content')
 
-<footer class="edica-footer" data-aos="fade-up">
+<footer class="edica-footer mt-5" data-aos="fade-up">
     <div class="container">
         <div class="row footer-widget-area">
             <div class="col-md-3">
-                <a href="index.html" class="footer-brand-wrapper">
-                    <img src="{{ asset('assets/images/logo.svg') }}" alt="edica logo">
+                <a href="#" class="footer-brand-wrapper">
+                    <div class="text-success font-weight-bolder">SPHERE</div>
                 </a>
-                <p class="contact-details">hello@edica.com</p>
+                <p class="contact-details">hello@sphere.com</p>
                 <p class="contact-details">+23 3000 000 00</p>
                 <nav class="footer-social-links">
                     <a href="#!"><i class="fab fa-facebook-f"></i></a>
@@ -121,7 +126,6 @@
                 <a href="#!">Terms</a>
                 <a href="#!">Site Map</a>
             </nav>
-            <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights reserved.</p>
         </div>
     </div>
 </footer>

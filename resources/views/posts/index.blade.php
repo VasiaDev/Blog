@@ -56,11 +56,11 @@
                                     <div class="d-flex justify-content-between">
                                     <p class="blog-post-category">{{ $randPost->category->title }}</p>
                                     @auth()
-                                        <form action="{{ route('post.like.store', $post->id) }}" method="POST">
+                                        <form action="{{ route('post.like.store', $randPost->id) }}" method="POST">
                                             @csrf
-                                            <span>{{ $post->liked_users_count }}</span>
+                                            <span>{{ $randPost->liked_users_count }}</span>
                                             <button type="submit" class="border-0 bg-transparent">
-                                                @if(auth()->user()->likedPosts->contains($post->id))
+                                                @if(auth()->user()->likedPosts->contains($randPost->id))
                                                     <i class="fa-solid fa-heart" style="color: #ff0000;"></i>
                                                 @else
                                                     <i class="fa-regular fa-heart"></i>
@@ -70,12 +70,12 @@
                                     @endauth
                                     @guest()
                                         <div>
-                                            <span>{{ $post->liked_users_count }}</span>
+                                            <span>{{ $randPost->liked_users_count }}</span>
                                             <i class="fa-regular fa-heart"></i>
                                         </div>
                                     @endguest
                                     </div>
-                                    <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
+                                    <a href="{{ route('post.show', $randPost->id) }}" class="blog-post-permalink">
                                         <h6 class="blog-post-title">{{ $randPost->title }}</h6>
                                     </a>
                                 </div>
@@ -99,7 +99,7 @@
                                             <img src="{{ 'storage/' . $newPost->preview_image }}"
                                                  alt="{{ $newPost->title }}">
                                             <figcaption class="post-title">
-                                                <a href="{{ route('post.show', $post->id) }}">{{ $newPost->title }}</a>
+                                                <a href="{{ route('post.show', $newPost->id) }}">{{ $newPost->title }}</a>
                                             </figcaption>
                                         </figure>
                                     @endforeach
@@ -112,7 +112,7 @@
                         <ul class="post-list">
                             @foreach($likedPosts as $likedPost)
                                 <li class="post">
-                                    <a href="{{ route('post.show', $post->id) }}" class="post-permalink media">
+                                    <a href="{{ route('post.show', $likedPost->id) }}" class="post-permalink media">
                                         <img src="{{ 'storage/' . $likedPost->preview_image }}" alt="blog post">
                                         <div class="media-body">
                                             <h6 class="post-title">{{ $likedPost->title }}</h6>

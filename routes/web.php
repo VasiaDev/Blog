@@ -30,64 +30,61 @@ Route::group(['namespace' => 'App\Http\Controllers\Category', 'prefix' => 'categ
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
-    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
         Route::get('/', 'IndexController')->name('personal');
+
+    Route::group(['prefix' => 'liked'], function () {
+        Route::get('/', 'LikedController@index')->name('personal.liked.index');
+        Route::delete('/{post}', 'LikedController@delete')->name('personal.liked.delete');
     });
-    Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
-        Route::get('/', 'IndexController')->name('personal.liked.index');
-        Route::delete('/{post}', 'DeleteController')->name('personal.liked.delete');
-    });
-    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
-        Route::get('/', 'IndexController')->name('personal.comment.index');
-        Route::get('/{comment}/edit', 'EditController')->name('personal.comment.edit');
-        Route::patch('/{comment}', 'UpdateController')->name('personal.comment.update');
-        Route::delete('/{comment}', 'DeleteController')->name('personal.comment.delete');
+    Route::group(['prefix' => 'comments'], function () {
+        Route::get('/', 'CommentController@index')->name('personal.comment.index');
+        Route::get('/{comment}/edit', 'CommentController@edit')->name('personal.comment.edit');
+        Route::patch('/{comment}', 'CommentController@update')->name('personal.comment.update');
+        Route::delete('/{comment}', 'CommentController@delete')->name('personal.comment.delete');
     });
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
-    Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin');
+
+    Route::group(['prefix' => 'posts'], function () {
+        Route::get('/', 'PostController@index')->name('admin.post.index');
+        Route::get('/create', 'PostController@create')->name('admin.post.create');
+        Route::post('/', 'PostController@store')->name('admin.post.store');
+        Route::get('/{post}', 'PostController@show')->name('admin.post.show');
+        Route::get('/{post}/edit', 'PostController@edit')->name('admin.post.edit');
+        Route::patch('/{post}', 'PostController@update')->name('admin.post.update');
+        Route::delete('/{post}', 'PostController@delete')->name('admin.post.delete');
     });
 
-    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
-        Route::get('/', 'IndexController')->name('admin.post.index');
-        Route::get('/create', 'CreateController')->name('admin.post.create');
-        Route::post('/', 'StoreController')->name('admin.post.store');
-        Route::get('/{post}', 'ShowController')->name('admin.post.show');
-        Route::get('/{post}/edit', 'EditController')->name('admin.post.edit');
-        Route::patch('/{post}', 'UpdateController')->name('admin.post.update');
-        Route::delete('/{post}', 'DeleteController')->name('admin.post.delete');
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'CategoryController@index')->name('admin.category.index');
+        Route::get('/create', 'CategoryController@create')->name('admin.category.create');
+        Route::post('/', 'CategoryController@store')->name('admin.category.store');
+        Route::get('/{category}', 'CategoryController@show')->name('admin.category.show');
+        Route::get('/{category}/edit', 'CategoryController@edit')->name('admin.category.edit');
+        Route::patch('/{category}', 'CategoryController@update')->name('admin.category.update');
+        Route::delete('/{category}', 'CategoryController@delete')->name('admin.category.delete');
     });
 
-    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
-        Route::get('/', 'IndexController')->name('admin.category.index');
-        Route::get('/create', 'CreateController')->name('admin.category.create');
-        Route::post('/', 'StoreController')->name('admin.category.store');
-        Route::get('/{category}', 'ShowController')->name('admin.category.show');
-        Route::get('/{category}/edit', 'EditController')->name('admin.category.edit');
-        Route::patch('/{category}', 'UpdateController')->name('admin.category.update');
-        Route::delete('/{category}', 'DeleteController')->name('admin.category.delete');
+    Route::group(['prefix' => 'tags'], function () {
+        Route::get('/', 'TagController@index')->name('admin.tag.index');
+        Route::get('/create', 'TagController@create')->name('admin.tag.create');
+        Route::post('/', 'TagController@store')->name('admin.tag.store');
+        Route::get('/{tag}', 'TagController@show')->name('admin.tag.show');
+        Route::get('/{tag}/edit', 'TagController@edit')->name('admin.tag.edit');
+        Route::patch('/{tag}', 'TagController@update')->name('admin.tag.update');
+        Route::delete('/{tag}', 'TagController@delete')->name('admin.tag.delete');
     });
 
-    Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function () {
-        Route::get('/', 'IndexController')->name('admin.tag.index');
-        Route::get('/create', 'CreateController')->name('admin.tag.create');
-        Route::post('/', 'StoreController')->name('admin.tag.store');
-        Route::get('/{tag}', 'ShowController')->name('admin.tag.show');
-        Route::get('/{tag}/edit', 'EditController')->name('admin.tag.edit');
-        Route::patch('/{tag}', 'UpdateController')->name('admin.tag.update');
-        Route::delete('/{tag}', 'DeleteController')->name('admin.tag.delete');
-    });
-
-    Route::group(['namespace' => 'User', 'prefix' => 'users'], function () {
-        Route::get('/', 'IndexController')->name('admin.user.index');
-        Route::get('/create', 'CreateController')->name('admin.user.create');
-        Route::post('/', 'StoreController')->name('admin.user.store');
-        Route::get('/{user}', 'ShowController')->name('admin.user.show');
-        Route::get('/{user}/edit', 'EditController')->name('admin.user.edit');
-        Route::patch('/{user}', 'UpdateController')->name('admin.user.update');
-        Route::delete('/{user}', 'DeleteController')->name('admin.user.delete');
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', 'UserController@index')->name('admin.user.index');
+        Route::get('/create', 'UserController@create')->name('admin.user.create');
+        Route::post('/', 'UserController@store')->name('admin.user.store');
+        Route::get('/{user}', 'UserController@show')->name('admin.user.show');
+        Route::get('/{user}/edit', 'UserController@edit')->name('admin.user.edit');
+        Route::patch('/{user}', 'UserController@update')->name('admin.user.update');
+        Route::delete('/{user}', 'UserController@delete')->name('admin.user.delete');
     });
 });
 
